@@ -79,7 +79,7 @@ body{
 
 section{
     min-height: 100vh;
-    padding: 10rem 12% 10rem;
+    padding: 15rem 12% 15rem;
 }
 
 .main{
@@ -109,14 +109,10 @@ span{
 }
 
 .main-content h1{
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
-}
-
-.main-img{
-    border-radius: 50%;
 }
 
 .main-img img{
@@ -200,4 +196,86 @@ span{
     box-shadow: 0 0 25px var(--main-color);
     background-color: var(--main-color);
     color: black;
+}
+
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span{
+    position: relative;
+}
+
+.text-animation span::before{
+    content: "Expert Informatique";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words{
+    0%,
+    20%{
+        content:"Data Analyst";
+    }
+    21%,
+    40%{
+        content: "Ingénieur IA";
+    }
+    41%,
+    60%{
+        content: "Développeur logiciel";
+    }
+    61%,
+    80%{
+        content: "Enseignant-Chercheur";
+    }
+    81%,
+    100%{
+        content: "Expert Informatique"
+    }
+}
+
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
 }
